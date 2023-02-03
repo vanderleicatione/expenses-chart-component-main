@@ -113,3 +113,24 @@ const style = getComputedStyle(document.querySelector("div[role=group] > p"));
 document
   .querySelectorAll(".highcharts-axis-labels.highcharts-xaxis-labels > text")
   .forEach((el) => (el.style = style));
+
+
+
+  function animateValue(obj, start, end, duration) {
+    let startTimestamp = null;
+    const step = (timestamp) => {
+      if (!startTimestamp) startTimestamp = timestamp;
+      const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+      obj.innerHTML = Math.floor(progress * (end - start) + start);
+      if (progress < 1) {
+        window.requestAnimationFrame(step);
+      }
+    };
+    window.requestAnimationFrame(step);
+  }
+  
+document.querySelectorAll(".counter").forEach(function(el){
+
+  animateValue(el, 0, el.innerHTML, 5000);
+});
+  
