@@ -1,0 +1,11 @@
+@mixin device($type){
+    @if $type  == mobile{
+        @content;
+    }
+    @else if $type == desktop{
+        @content;
+    }
+    @else if $type == tablet{
+        @content
+    }
+}

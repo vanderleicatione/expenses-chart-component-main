@@ -1,0 +1,40 @@
+/*FONTS*/
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap');
+$font: 'DM Sans', sans-serif;
+
+.font-title{
+    font-size: 32px;
+    list-style: 42px;
+    @include device(mobile){
+        font-size: 24px;
+        list-style: 32px;
+    }
+}
+
+.font-title-lg{
+    font-size: 48px;
+    list-style: 62px;
+    @include device(mobile){
+        font-size: 30px;
+        list-style: 39px;
+    }
+}
+
+.font-body{
+    font-size: 16px;
+    list-style: 21px;
+    @include device(mobile){
+        font-size: 12px;
+        list-style: 16px;
+    }
+}
+
+.font-body-lg{
+    font-size: 18px;
+    list-style: 23px;
+    @include device(mobile){
+        font-size: 14px;
+        list-style: 18px;
+    }
+}
