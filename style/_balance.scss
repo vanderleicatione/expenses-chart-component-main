@@ -1,0 +1,25 @@
+#balance-info{
+    background-color: $header-background-color;
+    @extend .border-radius;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 26px;
+    padding-bottom: 26px;
+
+    @include device(mobile){
+        padding-top: 22px;
+        padding-bottom: 22px;
+    }
+
+    div[role=group]{
+        color: $white-color-text;
+        p{
+            @extend .font-body-lg;
+        }
+        h2{
+            @extend .font-title;
+        }
+    }
+}

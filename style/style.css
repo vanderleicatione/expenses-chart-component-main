@@ -3,6 +3,10 @@
    License: none (public domain)
 */
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap");
+* {
+  box-sizing: border-box;
+}
+
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -55,37 +59,59 @@ table {
 
 /*Colors*/
 /*FONTS*/
-.font-title {
+.font-title, #balance-info div[role=group] h2 {
+  font-family: "DM Sans", sans-serif !important;
   font-size: 32px;
-  list-style: 42px;
-  font-size: 24px;
-  list-style: 32px;
+  line-height: 42px;
+}
+@media (max-width: 425px) {
+  .font-title, #balance-info div[role=group] h2 {
+    font-size: 24px;
+    line-height: 32px;
+  }
 }
 
 .font-title-lg {
+  font-family: "DM Sans", sans-serif !important;
   font-size: 48px;
-  list-style: 62px;
-  font-size: 30px;
-  list-style: 39px;
+  line-height: 62px;
+}
+@media (max-width: 425px) {
+  .font-title-lg {
+    font-size: 30px;
+    line-height: 39px;
+  }
 }
 
 .font-body {
+  font-family: "DM Sans", sans-serif !important;
   font-size: 16px;
-  list-style: 21px;
-  font-size: 12px;
-  list-style: 16px;
+  line-height: 21px;
+}
+@media (max-width: 425px) {
+  .font-body {
+    font-size: 12px;
+    line-height: 16px;
+  }
 }
 
-.font-body-lg {
+.font-body-lg, #balance-info div[role=group] p {
+  font-family: "DM Sans", sans-serif !important;
   font-size: 18px;
-  list-style: 23px;
-  font-size: 14px;
-  list-style: 18px;
+  line-height: 23px;
 }
-
-/* COLORS */
+@media (max-width: 425px) {
+  .font-body-lg, #balance-info div[role=group] p {
+    font-size: 14px;
+    line-height: 18px;
+  }
+} /* COLORS */
 body {
   background-color: hsl(33deg, 100%, 98%);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .container {
@@ -93,6 +119,54 @@ body {
   margin: 0 auto;
   padding: 0 15px;
   max-width: 540px;
-  max-width: 345px;
-  padding: 0 10px;
+}
+@media (max-width: 425px) {
+  .container {
+    max-width: 345px;
+    padding: 0 10px;
+  }
+}
+.container > * {
+  padding-left: 35px;
+  padding-right: 35px;
+}
+@media (max-width: 425px) {
+  .container > * {
+    padding-left: 22px;
+    padding-right: 22px;
+  }
+}
+
+.border-radius, #balance-info {
+  border-radius: 12px;
+}
+@media (max-width: 425px) {
+  .border-radius, #balance-info {
+    border-radius: 20px;
+  }
+}
+
+@media (max-width: 425px) {
+  .logo {
+    width: 58.34px;
+    height: 39px;
+  }
+}
+
+#balance-info {
+  background-color: hsl(10deg, 79%, 65%);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 26px;
+  padding-bottom: 26px;
+}
+@media (max-width: 425px) {
+  #balance-info {
+    padding-top: 22px;
+    padding-bottom: 22px;
+  }
+}
+#balance-info div[role=group] {
+  color: hsl(32deg, 38%, 92%);
 }/*# sourceMappingURL=style.css.map */
