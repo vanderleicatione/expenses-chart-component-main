@@ -20,6 +20,7 @@
         }
         h2{
             @extend .font-title;
+            font-weight: $bold;
         }
     }
 }

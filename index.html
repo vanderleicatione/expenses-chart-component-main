@@ -1,36 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  <link rel="stylesheet" href="style/style.css">
-  <title>Frontend Mentor | Expenses chart component</title>
-
-</head>
-<body>
-
-<div class="container" role="banner">
-  <header id="balance-info">
-    <div role="group">
-      <p>My balance</p>
-      <h2>$921.48</h2>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="style/style.css" />
+    <title>Frontend Mentor | Expenses chart component</title>
+  </head>
+  <body>
+    <div class="container" role="banner">
+      <header id="balance-info">
+        <div role="group">
+          <p>My balance</p>
+          <h2>$921.48</h2>
+        </div>
+        <img src="images/logo.svg" alt="logo" class="logo" />
+      </header>
+      <main id="spending-info">
+        <h2>Spending - Last 7 days</h2>
+        <div role="figure" id="dashboard"></div>
+        <div role="text" class="footer">
+          <div class="footer-left">
+            <p>Total this month</p>
+            <h1>$478.33</h1>
+          </div>
+          <div class="footer-right">
+            <p class="indicator">+2.4%</p>
+            <p>from last month</p>
+          </div>
+        </div>
+      </main>
     </div>
-    <img src="images/logo.svg" alt="logo" class="logo">
-  </header>
-  <main id="spending-info">
-    <h2>Spending - Last 7 days</h2>
-    <div role="figure" id="dashboard"></div>
-  </main>
-</div>
-<!--
-
-  Total this month
-  $478.33
-
-  +2.4%
-  from last month
-  -->
-</body>
+  </body>
 </html>

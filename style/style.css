@@ -169,4 +169,7 @@ body {
 }
 #balance-info div[role=group] {
   color: hsl(32deg, 38%, 92%);
+}
+#balance-info div[role=group] h2 {
+  font-weight: 700;
 }/*# sourceMappingURL=style.css.map */
