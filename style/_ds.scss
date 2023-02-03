@@ -2,8 +2,22 @@
 
 /* COLORS */
 
-$body-background-color: $white-100;
 $header-background-color: $orange-100;
 $content-background-color: $white-200;
+
+body{
+    background-color: $white-100;
+}
+
+.container{
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 15px;
+    max-width: 540px;
+    @include device(mobile){
+        max-width: 345px;
+        padding: 0 10px;
+    }
+}
 
 
