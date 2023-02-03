@@ -5,12 +5,14 @@
 /* COLORS */
 
 $header-background-color: $orange-100;
-$content-background-color: $white-200;
+$content-background-color: $white-100;
 
 $white-color-text: $white-300;
+$brown-color-title: $brown-100;
+$brown-color-text: $brown-200;
 
 body{
-    background-color: $white-100;
+    background-color: $white-200;
     height: 100vh;
     display: flex;
     justify-content: center;

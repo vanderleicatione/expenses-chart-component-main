@@ -59,25 +59,25 @@ table {
 
 /*Colors*/
 /*FONTS*/
-.font-title, #balance-info div[role=group] h2 {
+.font-title, #spending-info h2, #balance-info div[role=group] h2 {
   font-family: "DM Sans", sans-serif !important;
   font-size: 32px;
   line-height: 42px;
 }
 @media (max-width: 425px) {
-  .font-title, #balance-info div[role=group] h2 {
+  .font-title, #spending-info h2, #balance-info div[role=group] h2 {
     font-size: 24px;
     line-height: 32px;
   }
 }
 
-.font-title-lg {
+.font-title-lg, #spending-info .footer h1 {
   font-family: "DM Sans", sans-serif !important;
   font-size: 48px;
   line-height: 62px;
 }
 @media (max-width: 425px) {
-  .font-title-lg {
+  .font-title-lg, #spending-info .footer h1 {
     font-size: 30px;
     line-height: 39px;
   }
@@ -95,19 +95,19 @@ table {
   }
 }
 
-.font-body-lg, #balance-info div[role=group] p {
+.font-body-lg, #spending-info .footer p, #balance-info div[role=group] p {
   font-family: "DM Sans", sans-serif !important;
   font-size: 18px;
   line-height: 23px;
 }
 @media (max-width: 425px) {
-  .font-body-lg, #balance-info div[role=group] p {
+  .font-body-lg, #spending-info .footer p, #balance-info div[role=group] p {
     font-size: 14px;
     line-height: 18px;
   }
 } /* COLORS */
 body {
-  background-color: hsl(33deg, 100%, 98%);
+  background-color: hsl(27deg, 66%, 92%);
   height: 100vh;
   display: flex;
   justify-content: center;
@@ -137,11 +137,11 @@ body {
   }
 }
 
-.border-radius, #balance-info {
+.border-radius, #spending-info #bar-chart, #spending-info, #balance-info {
   border-radius: 12px;
 }
 @media (max-width: 425px) {
-  .border-radius, #balance-info {
+  .border-radius, #spending-info #bar-chart, #spending-info, #balance-info {
     border-radius: 20px;
   }
 }
@@ -172,4 +172,62 @@ body {
 }
 #balance-info div[role=group] h2 {
   font-weight: 700;
+}
+
+#spending-info {
+  background-color: hsl(33deg, 100%, 98%);
+  margin-top: 24px;
+  padding-top: 35px;
+  padding-bottom: 35px;
+}
+#spending-info h2 {
+  color: hsl(25deg, 47%, 15%);
+  font-weight: 700;
+  margin-bottom: 17px;
+}
+#spending-info #bar-chart {
+  width: 100%;
+  height: 227px;
+  background-color: hsl(186deg, 34%, 60%);
+  margin-bottom: 28px;
+}
+#spending-info .footer {
+  border-top: 2px solid hsl(32deg, 38%, 92%);
+  padding-top: 32px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#spending-info .footer p {
+  font-weight: 700;
+  color: hsl(28deg, 10%, 53%);
+}
+#spending-info .footer p.indicator {
+  color: hsl(25deg, 47%, 15%);
+}
+#spending-info .footer h1 {
+  color: hsl(25deg, 47%, 15%);
+  font-weight: 700;
+}
+#spending-info .footer .footer-right {
+  text-align: right;
+}
+@media (max-width: 425px) {
+  #spending-info {
+    margin-top: 14px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+  }
+  #spending-info h2 {
+    margin-bottom: 52px;
+  }
+  #spending-info #bar-chart {
+    width: 100%;
+    height: 177px;
+    margin-bottom: 25px;
+  }
+  #spending-info .footer {
+    padding-top: 24px;
+  }
 }/*# sourceMappingURL=style.css.map */
