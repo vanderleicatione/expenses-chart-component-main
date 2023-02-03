@@ -83,13 +83,13 @@ table {
   }
 }
 
-.font-body {
+.font-body, #spending-info #bar-chart .highcharts-axis-labels > text {
   font-family: "DM Sans", sans-serif !important;
   font-size: 16px;
   line-height: 21px;
 }
 @media (max-width: 425px) {
-  .font-body {
+  .font-body, #spending-info #bar-chart .highcharts-axis-labels > text {
     font-size: 12px;
     line-height: 16px;
   }
@@ -188,8 +188,22 @@ body {
 #spending-info #bar-chart {
   width: 100%;
   height: 227px;
-  background-color: hsl(186deg, 34%, 60%);
   margin-bottom: 28px;
+}
+#spending-info #bar-chart .highcharts-credits {
+  display: none;
+}
+#spending-info #bar-chart .highcharts-axis-labels > text {
+  fill: hsl(28deg, 10%, 53%);
+}
+#spending-info #bar-chart .tooltip {
+  font-weight: 700;
+}
+#spending-info #bar-chart .today {
+  fill: hsl(186deg, 34%, 60%);
+}
+#spending-info #bar-chart .today:hover {
+  fill: hsl(187deg, 49%, 80%);
 }
 #spending-info .footer {
   border-top: 2px solid hsl(32deg, 38%, 92%);

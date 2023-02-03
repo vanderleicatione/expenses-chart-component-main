@@ -1,49 +1,115 @@
-/*
-async function getData(path){
-    let response = await fetch(path);
-    let data = await response.json();
-    return data;
-
+async function getData(path) {
+  let response = await fetch(path);
+  let data = await response.json();
+  return data;
 }
-var obj = getData('data.json') || {
-    Chrome: 61.41,
-    "Internet Explorer": 11.84,
-    Firefox: 10.85,
-    Edge: 4.67,
-    Safari: 4.18,
-    "Sogou Explorer": 1.64,
-    Opera: 1.6,
-    QQ: 1.2,
-    Other: 2.61,
-  };
-console.log(obj)
-var categoriesObj = Object.keys(obj);
 
-var seriesDataObj = Object.values(obj);
+var response = [
+  {
+    day: "mon",
+    amount: 17.45,
+  },
+  {
+    day: "tue",
+    amount: 34.91,
+  },
+  {
+    day: "wed",
+    amount: 52.36,
+  },
+  {
+    day: "thu",
+    amount: 31.07,
+  },
+  {
+    day: "fri",
+    amount: 23.39,
+  },
+  {
+    day: "sat",
+    amount: 43.28,
+  },
+  {
+    day: "sun",
+    amount: 25.48,
+  },
+];
+
+var object = response.reduce(
+  (object, item) => ((object[item.day] = item.amount), object),
+  {}
+);
+
+var categoriesObj = Object.keys(object);
+
+var seriesDataObj = Object.values(object);
 
 var chart = Highcharts.chart("bar-chart", {
   title: {
     text: null,
   },
 
-  chart: { type: "column" },
+  chart: { type: "column",
+   backgroundColor: "#FFFAF5",
+    borderColor: "#FFFAF5",
+},
 
   xAxis: {
     categories: categoriesObj,
-    crosshair: true
+    crosshair: false,
+    lineWidth: 0,
   },
+
   yAxis: {
-    title: {
-      text: null,
-    },
+    visible: false,
   },
 
   series: [
     {
-      name: "Usage",
-      colorByPoint: true,
       data: seriesDataObj,
+      color: "#ec775f",
     },
   ],
+
+  tooltip: {
+    backgroundColor: "#382314",
+    borderColor: "#382314",
+    borderRadius: 6,
+    shape: "square",
+    style: {
+      color: "#fffaf5",
+    },
+  },
+
+  plotOptions: {
+    series: {
+      maxPointWidth: 50,
+       groupPadding: 0
+    },
+    column: {
+      states: {
+        hover: {
+          color: "#ff9985",
+        },
+        className: "labels",
+      },
+      borderRadius: 6,
+      tooltip: {
+        headerFormat: "",
+        pointFormat: "<p class='tooltip'>${point.y}<p>",
+      },
+    },
+  },
   legend: false,
-}); */
+});
+
+const day = new Date().getDay();
+let correctDay = day - 1 >= 0 ? day - 1 : 7;
+document
+  .querySelectorAll(".highcharts-point")
+  [correctDay].classList.add("today");
+
+const style = getComputedStyle(document.querySelector("div[role=group] > p"));
+document
+  .querySelectorAll(".highcharts-axis-labels.highcharts-xaxis-labels > text")
+  .forEach((el) => (el.style = style));
