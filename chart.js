@@ -49,10 +49,7 @@ var chart = Highcharts.chart("bar-chart", {
     text: null,
   },
 
-  chart: { type: "column",
-   backgroundColor: "#FFFAF5",
-    borderColor: "#FFFAF5",
-},
+  chart: { type: "column", backgroundColor: "#FFFAF5", borderColor: "#FFFAF5" },
 
   xAxis: {
     categories: categoriesObj,
@@ -84,7 +81,7 @@ var chart = Highcharts.chart("bar-chart", {
   plotOptions: {
     series: {
       maxPointWidth: 50,
-       groupPadding: 0
+      groupPadding: 0,
     },
     column: {
       states: {
@@ -114,23 +111,20 @@ document
   .querySelectorAll(".highcharts-axis-labels.highcharts-xaxis-labels > text")
   .forEach((el) => (el.style = style));
 
+/* ANIMATE NUMBERS*/
+function animateValue(obj, start, end, duration) {
+  let startTimestamp = null;
+  const step = (timestamp) => {
+    if (!startTimestamp) startTimestamp = timestamp;
+    const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+    obj.innerHTML = Math.floor(progress * (end - start) + start);
+    if (progress < 1) {
+      window.requestAnimationFrame(step);
+    }
+  };
+  window.requestAnimationFrame(step);
+}
 
-
-  function animateValue(obj, start, end, duration) {
-    let startTimestamp = null;
-    const step = (timestamp) => {
-      if (!startTimestamp) startTimestamp = timestamp;
-      const progress = Math.min((timestamp - startTimestamp) / duration, 1);
-      obj.innerHTML = Math.floor(progress * (end - start) + start);
-      if (progress < 1) {
-        window.requestAnimationFrame(step);
-      }
-    };
-    window.requestAnimationFrame(step);
-  }
-  
-document.querySelectorAll(".counter").forEach(function(el){
-
-  animateValue(el, 0, el.innerHTML, 5000);
+document.querySelectorAll(".counter").forEach(function (el) {
+  animateValue(el, 0, el.innerHTML, 1000);
 });
-  
