@@ -71,7 +71,7 @@ var chart = Highcharts.chart("bar-chart", {
 });
 
 const day = new Date().getDay();
-let correctDay = day - 1 >= 0 ? day - 1 : 7;
+let correctDay = day - 1 >= 0 ? day - 1 : 6;
 document
   .querySelectorAll(".highcharts-point")
   [correctDay].classList.add("today");
